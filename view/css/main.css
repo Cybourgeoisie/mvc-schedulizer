@@ -1,4 +1,105 @@
-#container {
-	margin : auto;
-	padding: 8px;
+a {
+	text-decoration: none;
+	color: rgb(142, 142, 214);
+}
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+
+/* LAYOUT CSS */
+#layout {
+	padding-left: 20%; /* "left col (nav + list)" width */
+	position: relative;
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 20%;
+	margin-left: -20%;
+	background: rgb(24, 33, 61);
+	color: #fff;
+}
+
+.header {
+	margin: 25% 1.25em 0;
+	text-align: right;
+	font-size:80%;
+}
+
+.brand-title,
+.brand-tagline {
+	margin: 0;
+}
+.brand-tagline {
+	font-weight: 300;
+	color: rgb(142, 142, 214);
+}
+
+.nav-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.nav-item {
+	display: block;
+	padding-top: 1em;
+}
+.nav-item a {
+	background: transparent;
+	color: #ccc;
+}
+.nav-item a:hover,
+.nav-item a:focus {
+	color: rgb(142, 142, 214);
+	text-decoration: none;
+}
+
+.content-subhead {
+	text-transform: uppercase;
+	color: #aaa;
+	border-bottom: 1px solid #eee;
+	padding: 0.4em 0;
+	font-size: 80%;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+}
+
+.content {
+	padding: 2em 3em 0;
+	font-family: Verdana, "Arial", serif;
+}
+
+.footer {
+	text-align: center;
+	padding: 1em 0;
+	color: #aaa;
+	font-size: 80%;
+}
+
+@media (max-width: 767px) {
+	.sidebar {
+		width: 100%;
+		position: relative;
+		margin: 0;
+	}
+
+	.header {
+	text-align: center;
+	top: auto;
+	margin: 3em auto;
+	position: static;
+	}
+
+	#layout {
+		padding: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.content {
+		padding: 2em 1em 0;
+	}
 }

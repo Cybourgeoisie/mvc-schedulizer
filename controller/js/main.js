@@ -3,30 +3,17 @@ $(document).ready(function()
 	// Log
 	console.log('Document ready');
 
-	// Load the home page
-	loadMainPage();
+	// Create the app global object
+	var app = {};
 
-	/**
-	 * Load the Main Page
-	 **/
-	function loadMainPage(evtObj)
-	{
-		// Log
-		console.log('AJAX started');
+	// Create the router and start catching history
+	app.Router = new Router();
+	Backbone.history.start();
 
-		// Get the main HTML page
-		$.ajax({
-			url     : VIEW_DIR + 'html/main.html',
-			success : handleResult
-		});
+	// Start the application
+	//app.ApplicationView = new ApplicationView();
 
-		function handleResult(data, status)
-		{
-			// Log
-			console.log('AJAX finished');
-
-			// Update the UI
-			$('#root').html(data);
-		}
-	}
+	var e  = new Employee({name:'Rachel'});
+	var eV = new EmployeeView({model: e, el: $('#root')});
+	e.fetch({data: {id: 2}});
 });
