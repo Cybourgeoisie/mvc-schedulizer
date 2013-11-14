@@ -1,0 +1,26 @@
+.Job .content h1 {
+	margin:  0.75em 0em;
+	padding: 0;
+}
+
+.Job .job-list { }
+
+.Job .job-list ul {
+	list-style: none;
+	padding:    0;
+	margin:     0;
+}
+
+.Job .job-list ul li {
+	margin:  0.2em;
+	display: block;
+}
+
+.Job .job-list ul li a:hover {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.Job .job-form {
+	margin-top: 1em;
+}

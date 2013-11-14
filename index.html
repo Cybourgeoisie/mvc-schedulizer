@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- HTTP Metadata -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width">
+		<meta name="description" content="">
+
+	<!-- Title -->
+		<title>Schedulizer!</title>
+
+	<!-- HTML5shiv -->
+		<!--[if IE]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	<!-- JS -->
+		<!-- Config -->
+		<script src="config/config.js"></script>
+
+	<!-- CSS -->
+		<!-- Pure CSS - YUI -->
+		<link rel="stylesheet" href="lib/css/pure-css-0.3.0.css">
+		<!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">-->
+
+		<!-- jQuery UI -->
+		<link rel="stylesheet" href="lib/css/jquery-ui-1.10.3.css">
+
+		<!-- jQuery.loadmask -->
+		<link rel="stylesheet" href="lib/css/jquery.loadmask.css">
+
+		<!-- Full Calendar -->
+		<link rel="stylesheet" href="lib/css/fullcalendar-1.6.4/fullcalendar.css">
+		<link rel="stylesheet" href="lib/css/fullcalendar-1.6.4/fullcalendar.print.css" media="print">
+
+		<!-- Application -->
+		<link rel="stylesheet" href="view/css/ApplicationView.css">
+		<link rel="stylesheet" href="view/css/Employee.css">
+		<link rel="stylesheet" href="view/css/Calendar.css">
+		<link rel="stylesheet" href="view/css/Job.css">
+
+	</head>
+	<body>
+	<!-- Vendors -->
+		<!-- jQuery -->
+		<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>-->
+		<script>window.jQuery || document.write('<script src="lib/js/jquery-1.10.2.js"><\/script>')</script>
+
+		<!-- Underscore -->
+		<script src="lib/js/underscore-1.5.2.js"></script>
+
+		<!-- Backbone -->
+		<script src="lib/js/backbone-1.0.0.js"></script>
+
+		<!-- jQuery UI -->
+		<script src="lib/js/jquery-ui-1.10.3.js"></script>
+
+		<!-- jQuery.loadmask -->
+		<script src="lib/js/jquery.loadmask.js"></script>
+
+		<!-- Full Calendar -->
+		<script src="lib/js/fullcalendar-1.6.4/fullcalendar.js"></script>
+		<!--<script src="lib/js/fullcalendar-1.6.4/gcal.js"></script>-->
+
+	<!-- UI & Content -->
+		<div id="root"></div>
+
+	<!-- Start the Application -->
+		<script src="controller/js/main.js"></script>
+
+	<!-- Application Files -->
+		<!-- Models -->
+		<script src="model/js/Employee.js"></script>
+		<script src="model/js/Job.js"></script>
+		<script src="model/js/Shift.js"></script>
+
+		<!-- Collections -->
+		<script src="controller/js/Collections/EmployeeCollection.js"></script>
+		<script src="controller/js/Collections/JobCollection.js"></script>
+		<script src="controller/js/Collections/ShiftCollection.js"></script>
+
+		<!-- Controllers -->
+		<script src="controller/js/EmployeeControllerView.js"></script>
+		<script src="controller/js/JobControllerView.js"></script>
+
+		<!-- Views -->
+		<script src="view/js/ApplicationView.js"></script>
+		<script src="view/js/CalendarView.js"></script>
+
+		<!-- Router -->
+		<script src="controller/js/Router.js"></script>
+
+	</body>
+</html>
