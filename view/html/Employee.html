@@ -1,17 +1,60 @@
-<div class="employee">
-	<h1>List of Employees</h1>
-	<div class="employee-list"></div>
+<div class="Employee">
+	<header class="page-header">Employees</header>
 
-	<h1>Add Employee</h1>
+	<div class="pure-g-r content">
+		<div class="pure-u-1-3">
+			<h3>List of Employees</h3>
+			<div class="employee-list">
+				<ul></ul>
+				<br /><a>Add New Employee</a>
+			</div>
+		</div>
+
+		<!-- Form -->
+		<div class="pure-u-2-3 employee-form">
+			<form class="pure-form pure-form-aligned">
+				<fieldset>
+					<div class="pure-control-group">
+						<label for="employee-name">Name</label>
+						<input type="text" class="form-control" id="employee-name" placeholder="Enter name" />
+					</div>
+
+					<div class="pure-controls job-checkboxes"></div>
+
+					<div class="availability-calendar"></div>
+
+					<div class="pure-controls">
+						<input type="hidden" id="employee-id" value="" />
+						<button type="submit" class="pure-button pure-button-active employee-form-submit">Add Employee</button>
+						<button type="submit" style="display:none;" class="pure-button pure-button-active employee-delete">Delete Employee</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div id="calendar-event-dialog-form" style="display:none;">
 	<form class="pure-form pure-form-aligned">
 		<fieldset>
 			<div class="pure-control-group">
-				<label for="employee-name">Name</label>
-				<input type="text" class="form-control" id="employee-name" placeholder="Enter name">
-			</div>
+				<!--
+				<label for="event-start">Start Time</label>
+				<input type="text" class="form-control" id="event-start" placeholder="Start Time" disabled />
 
-			<div class="pure-controls">
-				<button type="submit" class="pure-button pure-button-active">Submit</button>
+				<label for="event-end">End Time</label>
+				<input type="text" class="form-control" id="event-end" placeholder="End Time" disabled />
+				-->
+
+				<label for="event-repeat">Repeat</label>
+				<select class="form-control" id="event-repeat">
+					<option value="no">No</option>
+					<option value="daily">Daily</option>
+					<option value="weekly">Weekly</option>
+				</select>
+
+				<label for="event-available">Available?</label>
+				<input type="checkbox" class="form-control" id="event-available" checked="checked" />
 			</div>
 		</fieldset>
 	</form>

@@ -1,0 +1,42 @@
+.Calendar .content {
+	margin-top: 1em;
+}
+
+.Calendar .calendar {
+	text-align: center;
+	font-size: 9pt;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	letter-spacing: normal;
+	width: 100%;
+}
+
+.Calendar .events {
+	float: left;
+	padding: 0 5px;
+	border: 1px solid #ccc;
+	background: #eee;
+	text-align: left;
+}
+	
+.Calendar h4 {
+	font-size: 16px;
+	margin: 0;
+	padding: 1em 0em;
+}
+	
+.Calendar .event { /* try to mimick the look of a real event */
+	margin: 10px 0;
+	padding: 3px 4px 2px 4px;
+	background: #3366CC;
+	color: #fff;
+	font-size: .85em;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+.Calendar .schedule-results {
+	margin: 1em;
+	font-size: 9pt;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	letter-spacing: normal;
+}

@@ -1,5 +1,5 @@
-var EmployeeCollection = Backbone.Collection.extend
+app.EmployeeCollection = Backbone.Collection.extend
 ({
 	url: GATEWAY_URL + '?action=Employee::getAll',
-	model: Employee
+	model: app.Employee
 });

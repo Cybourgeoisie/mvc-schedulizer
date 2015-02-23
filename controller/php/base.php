@@ -25,3 +25,6 @@ include_once(CONTROLLER_PATH . 'php/SchedulizerDatabaseHandler.php');
 include_once(MODEL_PATH . 'php/Objects/Employee.php');
 include_once(MODEL_PATH . 'php/Objects/Job.php');
 include_once(MODEL_PATH . 'php/Objects/Shift.php');
+
+// Schedulizer
+include_once(CONTROLLER_PATH . 'php/Schedulizer.php');

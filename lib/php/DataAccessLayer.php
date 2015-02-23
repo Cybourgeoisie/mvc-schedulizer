@@ -115,7 +115,6 @@ class DataAccessLayer
 			{
 				// Update the row
 				$sql = 'UPDATE ' . $table . ' SET ' . $set . ' WHERE ' . $id_col . ' = ' . $id_val . ';';
-				print $sql . "<br />";
 				return $this->db->query($sql);
 			}
 			catch (PDOException $e)
@@ -129,7 +128,6 @@ class DataAccessLayer
 			try
 			{
 				$sql = 'INSERT INTO ' . $table . ' (' . $columns . ') VALUES (' . $values . ');';
-				print $sql . "<br />";
 				return $this->db->query($sql);
 			}
 			catch (PDOException $e)
@@ -147,6 +145,11 @@ class DataAccessLayer
 	public function getAllRows($table)
 	{
 		return $this->get($table);
+	}
+
+	public function deleteById($table, $id)
+	{
+		return $this->queryDelete($table, array($table . '_id' => $id));
 	}
 	
 // Private functions
@@ -305,7 +308,7 @@ class DataAccessLayer
 	
 	// get
 	// A general get function
-	private function get($table, $where = NULL, $order_by = NULL, $limit = NULL)
+	public function get($table, $where = NULL, $order_by = NULL, $limit = NULL)
 	{
 		try
 		{
@@ -345,7 +348,7 @@ class DataAccessLayer
 
 	// queryDelete
 	// Delete records from the database
-	private function queryDelete($table, $where)
+	public function queryDelete($table, $where)
 	{
 		// The delete statement must have some discrimatory values
 		if (!is_string($table) || !is_array($where))
@@ -372,7 +375,7 @@ class DataAccessLayer
 
 	// queryInsert
 	// Make an insert query, return query success information
-	private function queryInsert($table = "Posts", $insert = NULL)
+	public function queryInsert($table, $insert = NULL)
 	{
 		// Sanitize the table name
 		$table = $this->db->quote($table);
@@ -402,7 +405,7 @@ class DataAccessLayer
 	
 	// querySelect
 	// Make a select query, return query information
-	private function querySelect($select = "*", $table = "Posts", $where = NULL, $order_by = NULL, $limit = NULL)
+	private function querySelect($select = "*", $table, $where = NULL, $order_by = NULL, $limit = NULL)
 	{
 		// Condense the table keys
 		if (is_array($select))
@@ -440,7 +443,7 @@ class DataAccessLayer
 	
 	// queryUpdate
 	// Make an update query, return query success information
-	private function queryUpdate($table = "Posts", $update = NULL, $where = NULL)
+	private function queryUpdate($table, $update = NULL, $where = NULL)
 	{
 		// Sanitize the table name
 		$table = $this->db->quote($table);

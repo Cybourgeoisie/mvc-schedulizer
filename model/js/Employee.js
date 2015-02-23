@@ -1,13 +1,18 @@
-var Employee = Backbone.Model.extend
+app.Employee = Backbone.Model.extend
 ({
+	// Set the ID attribute
+	idAttribute: 'employee_id',
+
 	// Default values
 	defaults: {
-		employee_id: null,
-		name:        null
+		name:         null,
+		availability: {},
+		Job:          []
 	},
 	
 	// URL Root
-	url: GATEWAY_URL + '?action=Employee::find',
+	urlRoot: GATEWAY_URL + '?action=Employee::REST',
+	//urlRoot: 'employee',
 	
 	initialize: function()
 	{
@@ -18,7 +23,17 @@ var Employee = Backbone.Model.extend
 
 	initEvents: function()
 	{
-		this.on("invalid", function(model, error){ console.log(error); });
+		this.on('invalid', function(model, error){ console.log(error); });
+	},
+
+	parse: function(response)
+	{
+		if (response.availability)
+		{
+			response.availability = JSON.parse(response.availability);
+		}
+
+		return response;
 	},
 
 	validate: function(attributes)

@@ -1,13 +1,33 @@
-var EmployeeView = Backbone.View.extend
+app.EmployeeView = Backbone.View.extend
 ({
-	tagName:  'div',
-
-	// Cache the template function for a single item.
-	tpl: _.template("An example template for each employee, like my name is <%= name %>"),
+	tplPath: VIEW_PATH + 'html/EmployeeView.html',
 
 	initialize: function()
 	{
-		console.log('Created employee view');
+		// Get the template
+		$.get(this.tplPath, $.proxy(this.initPage, this));
+	},
+
+	initPage: function(pageData)
+	{
+		// Render the page
+		this.renderTemplate(pageData);
+
+		// Initialize event handlers
+		this.initEvents();
+	},
+
+	initEvents: function()
+	{
+
+	},
+
+	/**
+	 * Render
+	 */
+	renderTemplate: function(data)
+	{
+		this.tpl = _.template(data);
 		this.render();
 	},
 

@@ -1,27 +1,43 @@
-var Router = Backbone.Router.extend({
-    /* define the route and function maps for this router */
-    routes: {
-        // About
-        "about" : "showAbout",
+app.Router = Backbone.Router.extend
+({
+	// Route URL requests
+	routes: {
+		// Employees
+		"employee"     : "loadEmployee",
+		"employee/:id" : "getEmployee",
 
-        // Match employees
-        "employee/:id" : "getEmployee",
+		// Calendar
+		"calendar" : "loadCalendar",
 
-        // Default
-        "*other" : "defaultRoute"
-    },
+		// Jobs
+		"job" : "loadJob",
 
-    showAbout: function()
-    {
-        console.log("About page");
-    },
+		// Default
+		"*other" : "defaultRoute"
+	},
 
-    getEmployee: function(id)
-    {
-        console.log("You are trying to reach employee " + id);
-    },
+	getEmployee: function(id)
+	{
+		console.log("You are trying to reach employee " + id);
+	},
 
-    defaultRoute: function(other){
-        console.log('Invalid. You attempted to reach:' + other);
-    }
+	loadEmployee: function(id)
+	{
+		console.log("You are trying to reach the employee view!");
+	},
+
+	loadCalendar: function()
+	{
+		console.log('You are trying to reach the calendar view!');
+	},
+
+	loadJob: function()
+	{
+		console.log('You are trying to reach the job view!');
+	},
+
+	defaultRoute: function(other)
+	{
+		console.log('Invalid. You attempted to reach:' + other);
+	}
 });

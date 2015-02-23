@@ -1,0 +1,85 @@
+a {
+	text-decoration: none;
+	color: rgb(142, 142, 214);
+}
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+
+body {
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	background-color: #fff;
+	color: #444;
+}
+
+/* LAYOUT CSS */
+#layout {
+	padding-left: 15%; /* "left col (nav + list)" width */
+	position: relative;
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 15%;
+	margin-left: -15%;
+	background: #03406A;
+	color: #fff;
+}
+
+header {
+	margin: 0px;
+	color: #ccc;
+}
+
+.header {
+	margin: 40px 1.25em 0;
+	text-align: right;
+}
+
+.page-header {
+	padding: 1em 1.5em 0.5em 1.5em;
+	font-size:200%;
+	background-color:#24577B;
+}
+
+.app-title {
+	margin: 0 0 1em 0;
+}
+
+.nav-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.nav-item {
+	display: block;
+	padding-top: 1em;
+}
+.nav-item a {
+	background: transparent;
+	color: #ccc;
+}
+.nav-item a:hover,
+.nav-item a:focus {
+	color: rgb(142, 142, 214);
+	text-decoration: none;
+}
+
+#page {
+	padding: 0;
+	margin: 0;
+}
+
+.content {
+	padding: 0em 1.5em 0;
+}
+
+.footer {
+	text-align: center;
+	padding: 1em 0;
+	color: #666;
+	font-size: 80%;
+}

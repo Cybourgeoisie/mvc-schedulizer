@@ -1,0 +1,7 @@
+app.EmployeeController = {
+	initialize: function()
+	{
+		var e  = new app.Employee({name:'Rachel'});
+		var eV = new app.EmployeeView({model: e, el: this.$el.find('#page')});
+	}
+};

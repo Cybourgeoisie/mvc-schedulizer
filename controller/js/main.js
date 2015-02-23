@@ -1,19 +1,25 @@
+// Initialize
+var app = app || {};
+
+// Runs when everything is loaded
 $(document).ready(function()
 {
 	// Log
 	console.log('Document ready');
 
-	// Create the app global object
-	var app = {};
-
 	// Create the router and start catching history
-	app.Router = new Router();
+	var Router = new app.Router();
 	Backbone.history.start();
 
-	// Start the application
-	//app.ApplicationView = new ApplicationView();
+	// Load the application view
+	var applicationView = new app.ApplicationView({
+		el:     $('#root'),
+		Router: Router
+	});
+});
 
-	var e  = new Employee({name:'Rachel'});
-	var eV = new EmployeeView({model: e, el: $('#root')});
-	e.fetch({data: {id: 2}});
+// Handle all AJAX errors
+$(document).ajaxError(function(err)
+{
+	console.log('An error has occurred: ' + JSON.stringify(err));
 });

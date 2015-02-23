@@ -47,7 +47,7 @@ class SchedulizerDatabaseHandler extends DataAccessLayer
 
 		// Create the Tables
 		$this->createTableEmployee();
-		$this->createTableEmployeeAvailability();
+		//$this->createTableEmployeeAvailability();
 		$this->createTableJob();
 		$this->createTableShift();
 		//$this->createTableEvent();
@@ -63,7 +63,8 @@ class SchedulizerDatabaseHandler extends DataAccessLayer
 	{
 		$table = "employee";
 		$columns = array(
-			array('name', 'TEXT')
+			array('name',         'TEXT'),
+			array('availability', 'TEXT')
 		);
 		$this->createTable($table, $columns);
 	}
@@ -107,10 +108,10 @@ class SchedulizerDatabaseHandler extends DataAccessLayer
 		// For this project, we will be storing the datetime and timestamp as integers
 		$table = "shift";
 		$columns = array(
-			array('name',           'TEXT'),
-			array('job_id',         'INTEGER'),
-			array('start_datetime', 'INTEGER'),
-			array('end_datetime',   'INTEGER')
+			array('name',   'TEXT'),
+			array('job_id', 'INTEGER'),
+			array('start',  'INTEGER'),
+			array('end',    'INTEGER')
 		);
 		$this->createTable($table, $columns);
 	}

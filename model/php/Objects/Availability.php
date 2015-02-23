@@ -1,21 +1,22 @@
 <?php if (!defined('ACCESS')) die('Unauthorised access.'); // Forbid direct access
 
 /**
- * Job
+ * Availability
  */
 
 include_once(MODEL_PATH . 'php/ObjectModel.php');
 
-class Job extends ObjectModel
+class Employee_Availability extends ObjectModel
 {
 	// Properties
-	protected $job_id;
+	protected $employee_availability_id;
 	public    $name;
 
 	// Data
 	protected $obj_data = array(
-		'job_id' => null,
-		'name'   => null
+		'employee_availability_id' => null,
+		'start_datetime'           => null,
+		'end_datetime'             => null
 	);
 
 	protected $rel_data = array(
@@ -24,14 +25,14 @@ class Job extends ObjectModel
 
 	// Relationships
 	protected $relationships = array(
-		'Employee' => 'employee_to_job'
+		'Employee' => 'employee_availability'
 	);
 
 	// Save data
 	public function save()
 	{
 		$data = array(
-			'job_id' => $this->job_id,
+			'employee_availability_id' => $this->employee_availability_id,
 			'name'   => $this->name
 		);
 
